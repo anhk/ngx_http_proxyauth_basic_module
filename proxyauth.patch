@@ -1,6 +1,7 @@
---- a/src/http/ngx_http_header_filter_module.c     2017-10-11 02:19:56.930454985 +0000
-+++ b/src/http/ngx_http_header_filter_module.c     2017-10-11 02:19:12.081951747 +0000
-@@ -86,7 +86,7 @@
+index 9b89405..df6fffc 100644
+--- a/src/http/ngx_http_header_filter_module.c
++++ b/src/http/ngx_http_header_filter_module.c
+@@ -87,7 +87,7 @@ static ngx_str_t ngx_http_status_lines[] = {
      ngx_string("404 Not Found"),
      ngx_string("405 Not Allowed"),
      ngx_string("406 Not Acceptable"),
@@ -9,27 +10,28 @@
      ngx_string("408 Request Time-out"),
      ngx_string("409 Conflict"),
      ngx_string("410 Gone"),
-
---- a/src/http/ngx_http_request.c	2017-07-11 21:24:09.000000000 +0800
-+++ b/src/http/ngx_http_request.c	2017-10-08 11:23:03.090701100 +0800
-@@ -150,6 +150,10 @@
+index 7dd28b8..4a00e48 100644
+--- a/src/http/ngx_http_request.c
++++ b/src/http/ngx_http_request.c
+@@ -157,6 +157,10 @@ ngx_http_header_t  ngx_http_headers_in[] = {
                   offsetof(ngx_http_headers_in_t, authorization),
                   ngx_http_process_unique_header_line },
- 
+
 +    { ngx_string("Proxy-Authorization"),
 +                 offsetof(ngx_http_headers_in_t, proxyauthorization),
 +                 ngx_http_process_unique_header_line },
 +
      { ngx_string("Keep-Alive"), offsetof(ngx_http_headers_in_t, keep_alive),
                   ngx_http_process_header_line },
- 
---- a/src/http/ngx_http_request.h	2017-07-11 21:24:09.000000000 +0800
-+++ b/src/http/ngx_http_request.h	2017-10-08 11:21:44.134609100 +0800
-@@ -202,6 +202,7 @@
+
+index fce70ef..5561977 100644
+--- a/src/http/ngx_http_request.h
++++ b/src/http/ngx_http_request.h
+@@ -207,6 +207,7 @@ typedef struct {
  #endif
- 
+
      ngx_table_elt_t                  *authorization;
 +	ngx_table_elt_t                  *proxyauthorization;
- 
+
      ngx_table_elt_t                  *keep_alive;
- 
+
