@@ -1,5 +1,5 @@
---- a/src/ngx_http_header_filter_module.c     2017-10-11 02:19:56.930454985 +0000
-+++ b/src/ngx_http_header_filter_module.c     2017-10-11 02:19:12.081951747 +0000
+--- a/src/http/ngx_http_header_filter_module.c     2017-10-11 02:19:56.930454985 +0000
++++ b/src/http/ngx_http_header_filter_module.c     2017-10-11 02:19:12.081951747 +0000
 @@ -86,7 +86,7 @@
      ngx_string("404 Not Found"),
      ngx_string("405 Not Allowed"),
